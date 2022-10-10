@@ -30,6 +30,7 @@ services:
       - "xpack.graph.enabled=false"
       - "xpack.watcher.enabled=false"
       - "path.repo=/shared_folder"
+<<<<<<< HEAD
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9200"]
       interval: 30s
@@ -45,6 +46,10 @@ services:
           memory: 1500m
     networks:
       - elk
+=======
+    # networks:
+    #   - techmaster
+>>>>>>> a51e0919fce03d08581bd4dfeceefaf256fd071d
 
   elasticsearch2:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.2
@@ -74,6 +79,7 @@ services:
       - "xpack.graph.enabled=false"
       - "xpack.watcher.enabled=false"
       - "path.repo=/shared_folder"
+<<<<<<< HEAD
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9200"]
       interval: 30s
@@ -86,6 +92,11 @@ services:
     networks:
       - elk
 
+=======
+    # networks:
+    #   - techmaster
+  
+>>>>>>> a51e0919fce03d08581bd4dfeceefaf256fd071d
   elasticsearch3:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.2
     container_name: elasticsearch3
@@ -114,6 +125,7 @@ services:
       - "xpack.graph.enabled=false"
       - "xpack.watcher.enabled=false"
       - "path.repo=/shared_folder"
+<<<<<<< HEAD
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9200"]
       interval: 30s
@@ -125,12 +137,22 @@ services:
         hard: -1
     networks:
       - elk
+=======
+    # networks:
+    #   - techmaster
+>>>>>>> a51e0919fce03d08581bd4dfeceefaf256fd071d
 
 volumes:
   es1_data:
   es2_data:
   es3_data:
+<<<<<<< HEAD
 networks:
   elk:
     driver: bridge
 
+=======
+# networks:
+#   techmaster:
+#     external: true
+>>>>>>> a51e0919fce03d08581bd4dfeceefaf256fd071d

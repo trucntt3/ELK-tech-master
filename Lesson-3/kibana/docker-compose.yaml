@@ -4,11 +4,23 @@ services:
     image: docker.elastic.co/kibana/kibana:8.4.2
     environment:
       - SERVERNAME=kibana
+<<<<<<< HEAD
       - ELASTICSEARCH_HOSTS=http://elasticsearch-single_default:9200
+=======
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+>>>>>>> a51e0919fce03d08581bd4dfeceefaf256fd071d
     ports:
       - 5601:5601
     volumes:
       - kibanadata:/usr/share/kibana/data
+    networks:
+      - techmaster
 volumes:
   kibanadata:
+<<<<<<< HEAD
 
+=======
+networks:
+  techmaster:
+    external: true
+>>>>>>> a51e0919fce03d08581bd4dfeceefaf256fd071d
