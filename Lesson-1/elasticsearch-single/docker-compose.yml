@@ -11,6 +11,11 @@ services:
       - 9200:9200
     volumes:
       - data-elasticsearch:/usr/share/elasticsearch/data # mount data volume
+    networks:
+      - techmaster
 volumes:
   data-elasticsearch:
     driver: local
+networks:
+  techmaster:
+    external: true
