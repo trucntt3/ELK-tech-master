@@ -43,6 +43,8 @@ services:
       resources:
         limits:
           memory: 1500m
+    networks:
+      - elk
 
   elasticsearch2:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.2
@@ -81,6 +83,8 @@ services:
       memlock:
         soft: -1
         hard: -1
+    networks:
+      - elk
 
   elasticsearch3:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.2
@@ -119,8 +123,14 @@ services:
       memlock:
         soft: -1
         hard: -1
+    networks:
+      - elk
 
 volumes:
   es1_data:
   es2_data:
   es3_data:
+networks:
+  elk:
+    driver: bridge
+

@@ -11,6 +11,12 @@ services:
       - 9200:9200
     volumes:
       - data-elasticsearch:/usr/share/elasticsearch/data # mount data volume
+    networks:
+      - elk
 volumes:
   data-elasticsearch:
     driver: local
+networks:
+  elk:
+    driver: bridge
+

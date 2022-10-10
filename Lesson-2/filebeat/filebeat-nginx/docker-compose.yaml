@@ -8,3 +8,8 @@ services:
     volumes:
     - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
     - /home/ubuntu/ELK-tech-master/Lesson-2/nginx/log:/var/log/nginx/
+networks:
+  default:
+    external:
+      name: elasticsearch-single_elk
+
